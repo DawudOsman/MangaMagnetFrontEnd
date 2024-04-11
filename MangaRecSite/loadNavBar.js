@@ -1,0 +1,23 @@
+document.write(`<div id="headerLine">
+<link rel="stylesheet" href="navStyle.css">
+<header id="navBar">
+    <div id="logo">
+        <a href="home.html"><img src="Images/whitePngVers.png"></a>
+    </div>
+    <div id="search-Links">
+        <h2>Random Manga</h2>
+        <a href="searchManga.html"><h2>Advanced Search</h2></a>
+    </div>
+    <div id="search_Bar">
+        <form id="search_Form">
+            <input id="search" type="search" placeholder="search">
+            
+        </form>
+        <button type="submit" id="search-btn"><img src="Images/blackIcon.svg"></button>
+    </div>
+    <div id="sign-up">
+        <h2><a>Login</a></h2>
+        <h2><a>Register</a></h2>
+    </div>
+</header>
+</div>`)

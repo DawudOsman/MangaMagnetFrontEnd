@@ -1,0 +1,133 @@
+html,body{height: 100%;}
+*
+{
+    box-sizing: border-box;
+    --mainColor: #222222;
+    --secondColor: red;
+    --scrollX:  600px ;
+    --textColor: white;
+}
+body
+{
+    background-color: var(--mainColor);
+    margin: 0 auto;
+
+}
+
+#topManga
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rndmManga
+{
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    background-color: 	#28282B;
+}
+.container
+{
+    width: 50%;
+    margin: 10px auto;
+}
+.carousel
+{
+    
+    margin-top: 5px;
+    
+    display: flex;
+    margin-top: 20px;
+    
+    
+
+}
+section
+{
+   min-width: 300px;
+   width: 300px;
+   min-height: 200px;
+   
+   margin-right: 10px;
+   display: block;
+   align-items: center;
+   justify-content: center;
+   
+}
+.MangaFilter
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.MangaFilterName
+{
+    text-align: start;
+}
+.slider
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    
+
+
+}
+.slider::-webkit-scrollbar
+{
+    display: none;
+}
+.container h2
+{
+   
+    margin-bottom: 20px;
+}
+p{color: white;}
+.mangaImg
+{
+    width: 256px;
+    height: 358px;
+    border-radius: 5px;
+}
+.mangaName
+{
+    display: block;
+    color: white;
+    width: 256px;
+    height: 18px;
+    font-size: 0.8rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+h2
+{
+    color: var(--textColor);
+   
+    font-size: 0.8rem;
+}
+h1
+{
+    color: var(--textColor);
+
+    font-size: 1.5rem;
+}
+img{
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+p
+{
+    color:  var(--textColor);
+}

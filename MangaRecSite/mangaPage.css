@@ -1,0 +1,75 @@
+section > img{
+    width: 256px;
+    height: 358px;
+    border-radius: 10px;
+    margin: 0;
+}
+section
+{
+    position: relative;
+    margin: 20px auto auto auto;
+    display:  flex;
+    max-height: 358px;
+    height:  100%;
+    width: 100%;
+    max-width: 900px;
+    align-items: end;
+    justify-content: flex-start;
+    gap: 30px;
+
+}
+#aboutSection
+{
+    width: 100%;
+    max-width: 500px;
+    min-height: 90%;
+    background-color: #5A5A5A;
+    padding-left:  10px;
+    padding-right: 10px;
+}
+p
+{
+    margin: 5px;
+    display: inline;
+}
+.MangaDescription
+{
+    display: flex;
+    align-items: start;
+    justify-content:flex-start;
+    gap: 5px;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.MangaDescription > div > p
+{
+    font-size: 10px;
+}
+.contents
+{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 5px;
+    flex-wrap: wrap;
+    line-height: 0.5;
+    flex: 0.5;
+}
+.MangaDescription > h1
+{
+    margin: 0px;
+}
+#summaryDiv
+{
+    position: relative;
+    margin: 20px auto auto auto;
+    display:  flex;
+    max-height: 358px;
+    height:  100%;
+    width: 100%;
+    max-width: 900px;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0px;
+}
