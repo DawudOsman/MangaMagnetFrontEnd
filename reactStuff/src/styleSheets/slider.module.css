@@ -1,0 +1,54 @@
+.mangaSliderContainer
+{
+    width: 80%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+.mangaSlider
+{
+}
+
+.sliderContainer
+{
+    width: fit-content !important;
+   
+}
+
+.mangaContainer
+{
+    
+    height: 388px;
+    width: 256px;
+}
+.sliderImg
+{
+    height: 358px;
+    width: 256px;
+    border-radius: 5px;
+}
+.mangaName
+{
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.links, .links:hover, .links:focus, .links:active {
+    text-decoration: none;
+    color: inherit;
+}
+@media only screen and  (max-width:900px)
+{
+    .sliderImg
+    {
+        width: 128px;
+        height: 179px;
+    }
+    .mangaContainer
+    {
+        width: 128px;
+        height: 209px;       
+    }
+}

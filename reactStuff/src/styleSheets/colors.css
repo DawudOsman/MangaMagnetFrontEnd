@@ -1,0 +1,9 @@
+:root
+{
+    --fontWhite: white;
+    --fontBlack: black;
+    --bgBlack: #1B1B1B;
+    --bgWhite: #B6B6B4;
+    --bgColor: var(--bgBlack);
+    --fontColor: var(--fontWhite);
+}
