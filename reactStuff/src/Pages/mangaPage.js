@@ -4,6 +4,8 @@ import { createRoot } from "react-dom/client";
 import { Await, useParams } from "react-router-dom";
 import Divbar from "../components/divBar";
 import '../styleSheets/colors.css';
+import { marked } from 'marked';
+import MangaContent from "../components/mangaContent";
 
 const mobile = (window.innerWidth <= 900) ? true : false;
 function MangaPage()
@@ -27,8 +29,23 @@ function MangaPage()
                 getMangaGenre(currManga)
                 getMangaTheme(currManga)
                 getMangaSummary(currManga)
+                getMangaImageUrl(currManga)
                 setMangaInfo(mangaObject)
+                console.log(currManga)
     
+            }
+            function getCoverId(cover)
+            {
+                let coverId = cover.filter(obj => {return obj['type'] == 'cover_art'})
+                return coverId[0]['attributes']['fileName']
+            }
+             function getMangaImageUrl(manga)
+            {
+                let mangaId = manga['id']
+                let coverUrl = getCoverId(manga['relationships'])
+                let url = `http://localhost:5251/mangaCover?mangaId=${mangaId}&imageId=${coverUrl}`
+                mangaObject.url = url
+               
             }
             async function getAuthorName(id)
             {
@@ -119,7 +136,10 @@ function MangaPage()
                 console.log(summary)
                 if(Object.values(summary).length != 0)
                     {
-                        mangaObject.summary = summary['en']
+                        let summaryMarkDown = summary['en']
+                        console.log(summaryMarkDown)
+                        mangaObject.summary = marked.parse(summaryMarkDown)
+                        console.log(mangaObject.summary)
                     }
                 
             }
@@ -128,13 +148,6 @@ function MangaPage()
         },[]
     )
     
-    return(<>{mangaInfo != undefined && <>
-        {mangaInfo.title != undefined && <><p>{mangaInfo.title}</p></>}{mangaInfo.authors != undefined && <><h2>Authors</h2>{mangaInfo.authors.map((author,idx) => {return <p>{author}</p>})}</>}
-        {mangaInfo.artists != undefined && <><h2>Artists</h2>{mangaInfo.artists.map((artist,idx) => {return <p>{artist}</p>})}</>}
-        {mangaInfo.genres != undefined && <><h2>Genre</h2>{mangaInfo.genres.map((genre,idx) =>{return <p>{genre}</p>})}</>}
-        {mangaInfo.themes != undefined && <><h2>Themes</h2>{mangaInfo.themes.map((theme,idx)=>{return <p>{theme}</p>})}</>}
-        {mangaInfo.summary != undefined && <>{mangaInfo.summary}</>}
-        </>}
-        </>)
+    return(<><MangaContent mangaInfo={mangaInfo}></MangaContent></>)
 };
 export default MangaPage

@@ -1,0 +1,46 @@
+.filterSearch
+{
+    display: grid;
+    grid-template-columns: 1fr 3rem;
+    justify-content: center;
+    background-color: white;
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 0.25rem;
+}
+.searchContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 0.2rem;
+}
+.searchContainer > button {
+    border: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+}
+.filterSearch > button
+{
+    border: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+}
+.searchInput
+{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+    
+    border-radius: 0.2rem;
+    width: 100%;
+}
+button > svg
+{
+    width: 20px;
+}

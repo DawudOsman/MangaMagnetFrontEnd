@@ -1,0 +1,51 @@
+#FilterBtn
+{
+    border: 0px;
+    text-align: center;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    width: 12rem;
+}
+#SearchInput
+{
+    outline: none;
+    border-radius: .25rem;
+    border-color: transparent;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+#SearchInputContainer
+{
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: .5rem;
+    
+}
+#SearchTransitionContainer
+{
+    transition: grid-template-rows .15s ease;
+    display: grid;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#FilterOptionsContainer
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 30px;
+    width: 100%;
+
+}
+

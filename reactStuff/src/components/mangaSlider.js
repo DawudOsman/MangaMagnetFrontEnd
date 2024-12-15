@@ -30,9 +30,10 @@ class MangaSlider extends Component
         .then((res) => 
                 {
                     res.json().then( async(data) => {
+                        //console.log(data)
                         let arr = data['data'].map((x) => 
                             {
-                                console.log(x)
+                                
                                 return {id:x['id'],coverLink:this.getCoverId(x['relationships']),name:x['attributes']['title']['en']}
                             })
             
@@ -67,7 +68,7 @@ class MangaSlider extends Component
     }
     render()
     {
-        console.log(this.state.mangaList)
+       
         return <div  class={mangaSliderStyle.mangaSliderContainer}>
             <h1 style={{color: "var(--fontColor)"}}>{this.props.sortBy == "rating"? "Highest Rating":"Latest Updates"}</h1>
             <Swiper
@@ -89,7 +90,7 @@ class MangaSlider extends Component
             >
                 {this.state.mangaList.map((manga,idx) =>
                     {
-                        console.log(manga)
+                        
                         const currManga =  <div class={mangaSliderStyle.mangaContainer}><img  class={mangaSliderStyle.sliderImg}src={manga == undefined? loadingImg: `http://localhost:5251/mangaCover?mangaId=${manga.id}&imageId=${manga.coverLink}`}></img><p class={mangaSliderStyle.mangaName}style={{color: "var(--fontColor)"}}>{manga == undefined? "Undefined": manga.name}</p>
                         </div>
                         return <SwiperSlide  className={mangaSliderStyle.sliderContainer} > {manga == undefined? currManga: <Link className={mangaSliderStyle.links} key={manga.id}to={`/manga/${manga.id}`}>{currManga}</Link>}

@@ -97,11 +97,11 @@ class Divbar extends Component
 
                 }} src={ this.props.darkMode ? blackIconBar: whiteIconBar} id={styles.iconImgBar}></img></div>
         </div>
-            <div style={{height: this.state.toggleNavIcon && this.props.isMobile ? "0px" : "auto"}} id={styles.navbarContents}>
-                <ul style={{top: (this.state.toggleNavIcon  && this.props.isMobile) ? "-1000px" : "0", transition: (this.state.mobileAnim) ? "top 0.8s ease" : "none 0.8s ease" }  }>
+            <div style={{position: this.state.toggleNavIcon && this.props.isMobile ? "absolute" : "static",top: (this.state.toggleNavIcon  && this.props.isMobile) ? "-1000px" : "50px", transition: (this.state.mobileAnim) ? "all 0.8s ease" : "none 0.8s ease" }} id={styles.navbarContents}>
+                <ul style={{top: (this.state.toggleNavIcon  && this.props.isMobile) ? "-1000px" : "0", transition: (this.state.mobileAnim) ? "all 0.8s ease" : "none 0.8s ease"}  }>
                     <li><input placeholder='Search' id={styles.navbarSearch} /></li>
                     <li><p style={{color: "var(--fontColor)"}}><Link className={styles.links} to="/random">Random Manga</Link></p></li>
-                    <li><p style={{color: "var(--fontColor)"}}>Advanced Search</p></li>
+                    <li><p style={{color: "var(--fontColor)"}}><Link className={styles.links} to="/advancedSearch">Advanced Search</Link></p></li>
   
                 </ul>
             </div>
