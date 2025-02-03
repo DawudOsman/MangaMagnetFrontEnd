@@ -30,10 +30,10 @@ class MangaSlider extends Component
         .then((res) => 
                 {
                     res.json().then( async(data) => {
-                        //console.log(data)
                         let arr = data['data'].map((x) => 
                             {
-                                
+                                console.log("manga Details are")
+                                console.log(x)
                                 return {id:x['id'],coverLink:this.getCoverId(x['relationships']),name:x['attributes']['title']['en']}
                             })
             
