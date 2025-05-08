@@ -13,6 +13,8 @@ Git — Version control and collaboration
 Here’s a look at the Manga Recommendation Site interface:
 
 ![Home Page](https://raw.githubusercontent.com/DawudOsman/MangaMagnetFrontEnd/refs/heads/main/AppImages/Home%20Page.png)
----![Manga Page](https://raw.githubusercontent.com/DawudOsman/MangaMagnetFrontEnd/refs/heads/main/AppImages/Manga%20Image.png)
+---
+![Manga Page](https://raw.githubusercontent.com/DawudOsman/MangaMagnetFrontEnd/refs/heads/main/AppImages/Manga%20Image.png)
 ---
 ![Search Page](https://raw.githubusercontent.com/DawudOsman/MangaMagnetFrontEnd/refs/heads/main/AppImages/Advanced%20Search%20Image.png)
+---
