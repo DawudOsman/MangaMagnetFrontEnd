@@ -15,7 +15,7 @@ function MangaContent(props){
     </div>
     
     </div>
-    {props.mangaInfo.summary != undefined && <><div dangerouslySetInnerHTML={{__html:props.mangaInfo.summary}} /></>}</div>
+    {props.mangaInfo.summary != undefined && <><div /><p dangerouslySetInnerHTML={{__html:props.mangaInfo.summary}}></p></>}</div>
         </>}
         </>)
 }

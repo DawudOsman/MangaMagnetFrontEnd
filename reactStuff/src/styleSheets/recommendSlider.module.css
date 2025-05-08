@@ -1,9 +1,10 @@
 .mangaSliderContainer
 {
     width: 80%;
-    max-width: 1440px;
+    max-width: min(50%,1000px);
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     height: auto;
 }
 .mangaSlider
@@ -19,13 +20,13 @@
 .mangaContainer
 {
     
-    height: 287px;
-    width: 192px;
+    width: 128px;
+    height: 209px;   
 }
 .sliderImg
 {
-    height: 269px;
-    width: 192px;
+    width: 128px;
+    height: 179px;
     border-radius: 5px;
 }
 .mangaName
@@ -52,4 +53,3 @@
         height: 209px;       
     }
 } 
- 

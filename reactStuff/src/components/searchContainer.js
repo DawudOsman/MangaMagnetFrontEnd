@@ -15,7 +15,7 @@ function SearchContainer(props)
     const filterName = props.filterName
     const filterObj = props.filterObj
     let idx = 0
-    return(<><div id={styles.SearchInputContainer}><input  id={styles.SearchInput} placeholder={"Search"} onChange={(e) => {changeTitle(e.target.value)}}></input><button className={styles.FilterBtns} onClick={()=>{props.changeUrlParams(props.searchUrl) ; props.changeSuffix(props.searchUrl)}}>Search</button><button onClick={()=>{toggleFitlers(!showFilters); changeFilterShown(-1)}} id={styles.FilterBtn}>{showFilters ? "Hide Filters" : "Show Filters"}<svg width={24} height={24} fill='none' stroke='Black' strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} viewBox='0 0 24 24' ><path d={showFilters? "m6 9 6 6 6-6" : "m18 15-6-6-6 6"}></path></svg></button></div>
+    return(<><div id={styles.SearchInputContainer}><input  id={styles.SearchInput} placeholder={"Search"} onChange={(e) => {changeTitle(e.target.value)}}></input><button className={styles.FilterBtns} onClick={()=>{props.changeUrlParams(props.searchUrl) ; props.changeOffset(0);props.changeSuffix(props.searchUrl)}}>Search</button><button onClick={()=>{toggleFitlers(!showFilters); changeFilterShown(-1)}} id={styles.FilterBtn}>{showFilters ? "Hide Filters" : "Show Filters"}<svg width={24} height={24} fill='none' stroke='Black' strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} viewBox='0 0 24 24' ><path d={showFilters? "m6 9 6 6 6-6" : "m18 15-6-6-6 6"}></path></svg></button></div>
     <div id={styles.SearchTransitionContainer} style={{gridTemplateRows: showFilters? "0fr": "1fr"}}>
     <div id={styles.FilterOptionsContainer} style={{overflow:  "hidden"}}>
     {filterObj.map((curr,index) => 

@@ -55,6 +55,30 @@ class MangaSlider extends Component
         .catch((error) => console.log(error))
 
     }
+    async getMyMangaList(myList)
+    {
+        var newList = await  Promise.all(myList.map( async (x)=>
+            
+            {
+                console.log(x)
+                try {
+                    const res = await fetch(`http://localhost:5251/Manga?mangaId=${x}`)
+                    const manga = await res.json()
+                    console.log(manga)
+                    return {id:manga.id,coverLink:manga.CoverId,name:manga.title}
+                } catch (error) {
+                    return undefined
+                }
+            }
+
+        )
+    )
+    console.log("NEW LIST ARE")
+    console.log(newList)
+    this.setState({
+        mangaList:newList
+    })
+    }
     getCoverLink = (async (id,coverLink) => 
         
         {
@@ -64,13 +88,27 @@ class MangaSlider extends Component
 )
     componentDidMount()
     {
-        this.fetchMangaList();
+        console.log("props are")
+        console.log(this.props)
+        if(this.props.myMangaList)
+            {
+                try {
+                    this.getMyMangaList(this.props.myMangaList)
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        else
+        {
+            this.fetchMangaList();
+        }
     }
     render()
     {
        
         return <div  class={mangaSliderStyle.mangaSliderContainer}>
-            <h1 style={{color: "var(--fontColor)"}}>{this.props.sortBy == "rating"? "Highest Rating":"Latest Updates"}</h1>
+            
+            <h1 style={{color: "var(--fontColor)"}}>{this.props.myMangaList ? "Staff Picks: Manga Edition" : this.props.sortBy == "rating"? "Highest Rating":"Latest Updates"}</h1>
             <Swiper
               loop={true}
               

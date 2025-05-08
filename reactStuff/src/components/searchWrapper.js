@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {Component, useEffect, useState, useRef} from 'react';
 import SearchContainer from './searchContainer';
 import { Navigate, useParams, useSearchParams } from "react-router-dom";
 function SearchWrapper(props)
@@ -275,10 +275,26 @@ function SearchWrapper(props)
 
   function convertParamsToSearchUrl()
   {
+    var params = {}
     console.log(prefix + searchUrl)
-    console.log("urlParams are")
-    console.log(Object.fromEntries(urlParams.entries()))
+    console.log("seach Params are")
+    for (const [key, value] of urlParams.entries()) {
+      if (params[key]) {
+          // If the key already exists, push to the array
+          params[key] = Array.isArray(params[key]) ? params[key] : [params[key]];
+          params[key].push(value);
+      } else {
+          // Otherwise, just set it
+          params[key] = value;
+      }
+    console.log(params)
   }
+  }
+  useEffect(()=>
+    {
+      convertParamsToSearchUrl()
+    },[]
+)
   useEffect(()=>{
         console.log("url params are")
         console.log(searchUrl)
@@ -287,6 +303,6 @@ function SearchWrapper(props)
 
 
 
-  return(<><SearchContainer title={title} changeUrlParams={changeUrlParams} changeTitle={changeTitle} changeSuffix={props.changeSuffix} filterValues={filterValues} changeFilterValues={changeFilterValues} fitlerDict={fitlerDict} filterName={filterName} filterObj={filterObj} urlParams={urlParams } searchUrl={searchUrl} changeSearchUrl={changeSearchUrl}></SearchContainer></>)
+  return(<><SearchContainer changeOffset={props.changeOffset} title={title} changeUrlParams={changeUrlParams} changeTitle={changeTitle} changeSuffix={props.changeSuffix} filterValues={filterValues} changeFilterValues={changeFilterValues} fitlerDict={fitlerDict} filterName={filterName} filterObj={filterObj} urlParams={urlParams } searchUrl={searchUrl} changeSearchUrl={changeSearchUrl}></SearchContainer></>)
 };
 export default SearchWrapper;

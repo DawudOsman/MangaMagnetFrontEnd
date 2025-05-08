@@ -1,1 +1,40 @@
-.mangaCardList{}
+.mangaCardList
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusts columns dynamically */
+    gap: 10px; /* Space between grid items */
+    max-width: 1440px; /* Optional: Limit the grid width */
+    margin: auto; /* Center the grid */
+}
+.mangaContainer
+{
+    width: 128px;
+    height: 209px;
+    margin-bottom: 10px;
+}
+.mangaImg
+{
+    width: 128px;
+    height: 179px;
+    border-radius: 5px; 
+}
+.mangaListNavBar
+{
+   margin: auto;
+   text-align: center;
+}
+.mangaListContainer
+{
+    margin-top: 20px;
+}
+.mangaName
+{
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.links, .links:hover, .links:focus, .links:active {
+    text-decoration: none;
+    color: inherit;
+}

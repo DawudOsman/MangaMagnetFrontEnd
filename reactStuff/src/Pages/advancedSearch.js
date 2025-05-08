@@ -14,7 +14,9 @@ const mobile = (window.innerWidth <= 900) ? true : false;
 function AdvancedSearch()
 {
     const [suffix, changeSuffix] = useState("?limit=32&")
+    const [offset,setOffset] = useState(0)
+    useEffect(()=>{setOffset(0)},[suffix])
     const prefix = "http://localhost:5251/customSearch"
-    return(<><SearchWrapper  suffix = {suffix} changeSuffix={changeSuffix}></SearchWrapper><MangaCardList suffix = {suffix} prefix = {prefix}></MangaCardList> </>)
+    return(<><SearchWrapper   changeOffset = {setOffset} suffix = {suffix} changeSuffix={changeSuffix}></SearchWrapper><MangaCardList suffix = {suffix} prefix = {prefix} offset={offset} setOffset={setOffset}></MangaCardList> </>)
 };
 export default AdvancedSearch

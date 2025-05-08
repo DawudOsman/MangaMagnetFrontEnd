@@ -6,6 +6,8 @@ import Divbar from "../components/divBar";
 import '../styleSheets/colors.css';
 import { marked } from 'marked';
 import MangaContent from "../components/mangaContent";
+import RecommendedMangas from "../components/recommendedManga";
+import { useLocation } from "react-router-dom";
 
 const mobile = (window.innerWidth <= 900) ? true : false;
 function MangaPage()
@@ -14,6 +16,7 @@ function MangaPage()
     let mangaId =  currManga.id
     const [mangaInfo,setMangaInfo] = useState(undefined);
     let mangaObject = {}
+    const location = useLocation();
     useEffect(() => 
         {
             async function initialiseManga(id)
@@ -22,16 +25,17 @@ function MangaPage()
                 let url =  `http://localhost:5251/Manga?mangaId=${id}`
                 let response = await fetch(url)
                 let randomManga = await response.json()
-                let currManga = randomManga['data']
-                getMangaTitle(currManga)
-                await getMangaArtist(currManga)
-                await getMangaAuthor(currManga)
-                getMangaGenre(currManga)
-                getMangaTheme(currManga)
-                getMangaSummary(currManga)
+                let currManga = randomManga
+                mangaObject.id = currManga.id
+                mangaObject.title = currManga.title
+                mangaObject.authors = currManga.Authors
+                mangaObject.artists = currManga.Artist
+                mangaObject.genres = currManga.genres
+                mangaObject.themes = currManga.Theme
+                mangaObject.summary =  marked.parse(currManga.Summary)
+                console.log(currManga)
                 getMangaImageUrl(currManga)
                 setMangaInfo(mangaObject)
-                console.log(currManga)
     
             }
             function getCoverId(cover)
@@ -42,7 +46,7 @@ function MangaPage()
              function getMangaImageUrl(manga)
             {
                 let mangaId = manga['id']
-                let coverUrl = getCoverId(manga['relationships'])
+                let coverUrl = manga['CoverId']
                 let url = `http://localhost:5251/mangaCover?mangaId=${mangaId}&imageId=${coverUrl}`
                 mangaObject.url = url
                
@@ -148,6 +152,6 @@ function MangaPage()
         },[]
     )
     
-    return(<><MangaContent mangaInfo={mangaInfo}></MangaContent></>)
+    return(<><div style={{overflow:'hidden'}}><MangaContent mangaInfo={mangaInfo}></MangaContent> </div><RecommendedMangas mangaId ={mangaId}></RecommendedMangas></>)
 };
 export default MangaPage

@@ -1,9 +1,7 @@
 const express = require("express");
-const cors = require("cors");
 const path = require("path");
 const app = express();
 // enable cors 
-app.use(cors());
 // Serve static files from dist directiory
 app.use(express.static(path.join(__dirname,'dist')));
 // Serve all other routes to index.html
