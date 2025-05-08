@@ -1,0 +1,33 @@
+:root
+{
+    --fontWhite: white;
+    --fontBlack: black;
+    --bgBlack: #1B1B1B;
+    --bgWhite: #B6B6B4;
+    --bgColor: var(--bgBlack);
+    --fontColor: var(--fontWhite);
+}
+:root p 
+{
+    color: var(--fontColor);
+}
+:root h1
+{
+    color: var(--fontColor);
+}
+:root h2{
+    color: var(--fontColor);
+}
+:root h3{
+    color: var(--fontColor);
+}
+:root h4{
+    color: var(--fontColor);
+}
+:root li{
+    color: var(--fontColor);
+}
+:root span
+{
+    color: var(--fontColor); 
+}

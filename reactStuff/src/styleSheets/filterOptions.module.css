@@ -1,0 +1,114 @@
+.filterBtn
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1rem;
+    border-radius: 0.25rem;
+    background: none;
+    background-color: white;
+    border: 0
+    ;
+}
+.filterBtn > p
+{
+    color: black;
+    margin: 5px;
+    text-align: left;
+    text-overflow: ellipsis;
+    margin-left: 0px;
+    font-size: 0.9rem;
+}
+.filterValues
+{
+    margin-top: 5px;
+    border-color: grey;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    position: absolute;
+    max-width: 400px;
+    min-width: 200px;
+}
+.filterValues > ul
+{
+    list-style-type: none;
+    padding: 0;
+}
+.filterValueContainer
+{
+    display: grid;
+    grid-template-columns: 0.75rem 1fr;
+    gap: 0.5rem;
+    padding: 0.25rem 0rem 0.25rem 1.5px;
+}
+.filterValueContainer > span
+{
+    opacity: 70%;
+}
+.filterValueContainer:hover > .singleSelect
+{
+   opacity: 100%;
+}
+.filterValueContainer:hover > .circleSelect
+{
+   opacity: 100%;
+}
+.filterValueContainer:hover > span
+{
+   opacity: 100%;
+}
+.singleSelect
+{
+    width: 2px;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background-color: #333;
+    margin-top: auto;
+    margin-bottom: auto;
+    opacity: 30%;
+}
+
+.circleSelect
+{
+    border: 1px grey solid;
+    border-radius: 9999px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 0.75rem;
+    width: 0.75rem;
+    opacity: 30%;
+
+}
+.tagParent
+{
+
+}
+.tagList
+{
+    margin: 0px;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    list-style-type: none;
+}
+.tagSection
+{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.tagSection > hr {
+    border-color: white;
+    border-top-width: 1px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    flex-grow: 1;
+}
+.tagSection > span {
+    font-size: 1.2rem;
+    line-height: 1.75rem;
+    text-transform: capitalize;
+}

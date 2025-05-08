@@ -1,0 +1,5 @@
+.mangaCard{}
+.links, .links:hover, .links:focus, .links:active {
+    text-decoration: none;
+    color: inherit;
+}

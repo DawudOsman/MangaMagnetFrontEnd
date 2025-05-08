@@ -1,0 +1,136 @@
+
+
+
+.navbar
+{
+    display:  flex;
+    margin: auto;
+    width: 700px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#logoImg
+{
+    height: 2.6rem;
+    width: auto;
+}
+#navbarContents
+{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+
+}
+#navbarContents > ul
+{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+
+}
+#navbarContents  > ul> li
+{
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+#navbarContents > ul > li >p
+{
+    position: relative;
+ 
+    justify-content: center;
+    font-size: 1em;
+}
+#navbarContents > ul>  li > p::before
+{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--fontColor);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+#navbarContents > ul > li > p:hover::before
+{
+    transform: scaleX(1);
+}
+#navbarSearch
+{
+    width: 15rem;
+    height: 1.5rem;
+    outline: none;
+    border-radius: .25rem;
+    border-color: transparent;
+    box-sizing: border-box;
+}
+#colorToggleBtn{}
+#iconImgBar
+{
+    height: 2rem;
+    width: auto;
+    display: none;
+}
+#colorModeIcon
+{
+    height: 2rem;
+    width: auto;
+}
+
+@media only screen and  (max-width:900px) {
+    #iconImgBar
+    {
+        height: 2rem;
+        width: auto;
+        display: inline;
+    }
+    .navbar
+    {
+        width: 50%;
+    }
+    #navbarContents
+    {
+         transition: height 0.4s ease-in-out;
+        transition-behavior: allow-discrete;
+        
+    }
+    #navbarContents > ul{
+        display: flex;
+        flex-direction: column;
+        transition-behavior: allow-discrete; 
+    }
+    /* … */
+    .navbar
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #logosDiv
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+  }
+
+  .links, .links:hover, .links:focus, .links:active {
+    text-decoration: none;
+    color: inherit;
+}
