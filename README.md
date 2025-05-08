@@ -8,3 +8,4 @@ JavaScript (ES6+)
 HTML5 & CSS3 — Semantic structure and responsive design
 
 Git — Version control and collaboration
+![Screenshot](https://raw.githubusercontent.com/DawudOsman/MangaMagnetFrontEnd/refs/heads/main/AppImages/Advanced%20Search%20Image.png)
